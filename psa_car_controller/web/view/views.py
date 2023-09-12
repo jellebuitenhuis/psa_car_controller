@@ -45,6 +45,7 @@ def get_default_car() -> Car:
 
 
 def add_header(el):
+    print("WTF")
     return dbc.Row([dbc.Col(dcc.Link(html.H1('My car info'), href=dash_app.requests_pathname_external_prefix,
                                      style={"TextDecoration": "none"})),
                     dbc.Col(dcc.Link(html.Img(src="assets/images/settings.svg", width="30veh"),

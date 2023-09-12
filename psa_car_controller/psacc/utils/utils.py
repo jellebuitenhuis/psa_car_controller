@@ -9,12 +9,12 @@ logger = logging.getLogger(__name__)
 def get_temp(latitude: str, longitude: str, api_key: str) -> float:
     try:
         if not (latitude is None or longitude is None or api_key is None):
-            weather_rep = requests.get("https://api.openweathermap.org/data/2.5/onecall",
+            weather_rep = requests.get("https://api.openweathermap.org/data/2.5/weather",
                                        params={"lat": latitude, "lon": longitude,
-                                               "exclude": "minutely,hourly,daily,alerts",
+                                               #"exclude": "minutely,hourly,daily,alerts",
                                                "appid": api_key,
                                                "units": "metric"})
-            temp = weather_rep.json()["current"]["temp"]
+            temp = weather_rep.json()["main"]["temp"]
             logger.debug("Temperature :%fc", temp)
             return temp
     except ConnectionError:
