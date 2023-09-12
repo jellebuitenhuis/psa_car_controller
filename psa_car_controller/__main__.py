@@ -2,7 +2,7 @@
 import os
 import sys
 from threading import Thread
-
+sys.path.append(os.path.dirname(os.path.dirname(os.path.realpath(__file__))))
 DIR = os.path.dirname(os.path.realpath(__file__))
 if sys.version_info < (3, 7):
     raise RuntimeError("This application requires Python 3.7+")
